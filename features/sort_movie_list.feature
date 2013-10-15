@@ -22,8 +22,12 @@ Background: movies have been added to database
   And I am on the RottenPotatoes home page
 
 Scenario: sort movies alphabetically
-  # your scenario here
+  When I have opted to see movies rated: "G, PG, PG-13, R"
+  And I sort movies by "Movie Title"
+  Then I should see "Aladdin" before "Amelie"
 
 Scenario: sort movies in increasing order of release date
-  # your scenario here
+  When I have opted to see movies rated: "G, PG, PG-13, R"
+  And I sort movies by "Release Date"
+  Then I should see "1981-06-12" before "2000-06-21"
 
