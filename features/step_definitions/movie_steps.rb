@@ -98,7 +98,7 @@ end
 Then /^I should see all of the movies$/ do
     allMovies = Movie.all
     
-    if allMovies.size == 10
+    if allMovies.size == all("tr").size
         allMovies.each do |movie|
             assert page.body =~/#{movie.title}/m
         end
